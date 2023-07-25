@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { useState } from "react"
 
 let INITIALSTATE = {
     count:0,
-    admin:true
 }
 
 
@@ -13,11 +11,14 @@ const count = createSlice({
     initialState:INITIALSTATE,
     reducers:{
         increment(state,action){
-            console.log('first')
-        }
+            state.count = state.count+1
+        },
+        decrement(state,action){
+            state.count = state.count-1
+        },
     }
 })
 
-export const { increment  } = count.actions
+export const { increment,decrement  } = count.actions
 
 export default count.reducer;
